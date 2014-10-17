@@ -5,7 +5,7 @@ package com.mg.studio.alice.myframework.layers;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.CanvasGame;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGNode;
 import com.mg.studio.alice.myframework.events.MGEventDelegateProtocol;
 

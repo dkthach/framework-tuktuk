@@ -5,8 +5,8 @@ package com.mg.studio.alice.myframework.layers;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.CanvasGame;
 import com.mg.studio.alice.myframework.actions.interval.MGMoveTo;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGNode;
 import com.mg.studio.alice.myframework.events.MGRGBAProtocol;
 import com.mg.studio.alice.myframework.type.MGPointF;

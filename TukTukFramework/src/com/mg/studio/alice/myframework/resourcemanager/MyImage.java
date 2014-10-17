@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 
-import com.mg.studio.alice.OlaSolitaireActivity;
 import com.mg.studio.engine.MGCanvas;
 import com.mg.studio.engine.MGImage;
 

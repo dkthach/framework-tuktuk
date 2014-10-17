@@ -1,6 +1,5 @@
 package com.mg.studio.alice.myframework.transitions;
 
-import com.mg.studio.alice.CanvasGame;
 import com.mg.studio.alice.myframework.actions.ActionCallback;
 import com.mg.studio.alice.myframework.actions.instant.MGCallback;
 import com.mg.studio.alice.myframework.actions.interval.MGDelayTime;
@@ -8,6 +7,7 @@ import com.mg.studio.alice.myframework.actions.interval.MGIntervalAction;
 import com.mg.studio.alice.myframework.actions.interval.MGJumpBy;
 import com.mg.studio.alice.myframework.actions.interval.MGScaleTo;
 import com.mg.studio.alice.myframework.actions.interval.MGSequence;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGScreen;
 import com.mg.studio.alice.myframework.type.MGPointF;
 import com.mg.studio.alice.myframework.type.MGSize;

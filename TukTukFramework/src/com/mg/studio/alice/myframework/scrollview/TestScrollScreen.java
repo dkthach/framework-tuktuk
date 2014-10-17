@@ -5,8 +5,7 @@ package com.mg.studio.alice.myframework.scrollview;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.CanvasGame;
-import com.mg.studio.alice.game.resoucredata.RM;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGScreen;
 import com.mg.studio.alice.myframework.type.MGSize;
 

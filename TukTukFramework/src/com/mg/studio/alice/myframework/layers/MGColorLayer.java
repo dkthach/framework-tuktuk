@@ -5,7 +5,7 @@ package com.mg.studio.alice.myframework.layers;
 
 import android.opengl.GLES20;
 
-import com.mg.studio.alice.CanvasGame;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.events.MGRGBAProtocol;
 import com.mg.studio.engine.MGColor;
 import com.mg.studio.engine.MGGraphic;

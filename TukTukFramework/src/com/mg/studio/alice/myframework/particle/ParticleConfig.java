@@ -2,7 +2,6 @@ package com.mg.studio.alice.myframework.particle;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.game.resoucredata.RM;
 import com.mg.studio.engine.MGColor;
 
 public class ParticleConfig {

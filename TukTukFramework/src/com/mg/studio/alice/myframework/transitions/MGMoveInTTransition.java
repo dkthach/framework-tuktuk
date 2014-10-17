@@ -1,6 +1,6 @@
 package com.mg.studio.alice.myframework.transitions;
 
-import com.mg.studio.alice.CanvasGame;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGScreen;
 /**
  * @author Dk Thach

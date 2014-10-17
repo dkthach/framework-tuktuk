@@ -1,7 +1,5 @@
 package com.mg.studio.alice.myframework.director;
 
-import java.io.SequenceInputStream;
-
 import android.graphics.PointF;
 
 import com.mg.studio.alice.myframework.actions.ActionCallback;
@@ -10,11 +8,9 @@ import com.mg.studio.alice.myframework.actions.bas.MGRepeatForever;
 import com.mg.studio.alice.myframework.actions.ease.MGEaseElasticOut;
 import com.mg.studio.alice.myframework.actions.instant.MGCallback;
 import com.mg.studio.alice.myframework.actions.interval.MGIntervalAction;
-import com.mg.studio.alice.myframework.actions.interval.MGScaleBy;
 import com.mg.studio.alice.myframework.actions.interval.MGScaleInAndOut;
 import com.mg.studio.alice.myframework.actions.interval.MGScaleTo;
 import com.mg.studio.alice.myframework.actions.interval.MGSequence;
-import com.mg.studio.alice.myframework.config.MGMacros;
 import com.mg.studio.engine.MGFont;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.engine.MGImage;

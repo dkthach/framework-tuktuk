@@ -1,6 +1,5 @@
 package com.mg.studio.alice.myframework.transitions;
 
-import com.mg.studio.alice.CanvasGame;
 import com.mg.studio.alice.myframework.actions.ActionCallback;
 import com.mg.studio.alice.myframework.actions.ease.MGEaseExponentialOut;
 import com.mg.studio.alice.myframework.actions.instant.MGCallback;
@@ -12,6 +11,7 @@ import com.mg.studio.alice.myframework.actions.interval.MGRotateBy;
 import com.mg.studio.alice.myframework.actions.interval.MGScaleTo;
 import com.mg.studio.alice.myframework.actions.interval.MGSequence;
 import com.mg.studio.alice.myframework.actions.interval.MGSpawn;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGScreen;
 import com.mg.studio.alice.myframework.layers.MGColorLayer;
 import com.mg.studio.alice.myframework.layers.TransEffectLayer;
