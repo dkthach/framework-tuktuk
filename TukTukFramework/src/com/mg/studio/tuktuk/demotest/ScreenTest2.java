@@ -37,7 +37,7 @@ public class ScreenTest2 extends MGScreen {
 	public void drawRearChild(MGGraphic g) {
 		g.setColor(1f, 1f, 0, 0);
 		g.drawRect(20 * RM.rate, 20 * RM.rate, CanvasGame.widthDevices - 20
-				* RM.rate, CanvasGame.heightDevices - 20 * RM.rate);
+				* RM.rate, CanvasGame.heightDevices - 20 * RM.rate,true);
 	}
 
 	void addball(float x, float y) {
@@ -65,6 +65,8 @@ public class ScreenTest2 extends MGScreen {
 		
 		//hàng đợi nhiều action chạy xong gọi tự hủy
 		MGSequence sequence = MGSequence.actions(spawn, callback);
+		ball.runAction(sequence);
+		addChild(ball);
 
 		
 	}
