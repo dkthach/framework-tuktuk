@@ -8,6 +8,7 @@ import android.graphics.PointF;
 import android.os.SystemClock;
 import android.util.Log;
 
+import com.mg.studio.alice.myframework.demotest.ScreenTest1;
 import com.mg.studio.alice.myframework.resourcemanager.LruMGImageCache;
 import com.mg.studio.alice.myframework.resourcemanager.MyImage;
 import com.mg.studio.alice.myframework.resourcemanager.MyImageInfo;
@@ -25,28 +26,29 @@ import com.mg.studio.engine.MGImage;
  * @author Dk Thach
  * 
  */
-public class CanvasGame extends MGCanvas implements Runnable{
+public class CanvasGame extends MGCanvas implements Runnable {
 	public static MGSize sizeDevices = MGSize.zero();
 
 	public static float widthDevices, heightDevices;
 	private MyImage temp;
 	private static Activity activity;
-	
+
 	// desired fps
-	    public final static int  MAX_FPS         = 60;
-	    // maximum number of frames to be skipped
-	    private final static int MAX_FRAME_SKIPS = 5;
-	    // the frame period
-	    private final static int FRAME_PERIOD    = 1000 / MAX_FPS;
-	    float                    dt;
-	    long                     lastUpdate;
-	    private boolean                    isStop;
-	    Executor                           updateExe                        = Executors.newFixedThreadPool(1);
+	public final static int MAX_FPS = 60;
+	// maximum number of frames to be skipped
+	private final static int MAX_FRAME_SKIPS = 5;
+	// the frame period
+	private final static int FRAME_PERIOD = 1000 / MAX_FPS;
+	float dt;
+	long lastUpdate;
+	private boolean isStop;
+	Executor updateExe = Executors.newFixedThreadPool(1);
 
 	public CanvasGame(Activity context) {
 		super(context, true);
 		activity = context;
 		setRenderMode(RENDERMODE_WHEN_DIRTY);
+		MGDirector.shareDirector().runWithScreen(ScreenTest1.screen());
 
 	}
 
@@ -83,8 +85,7 @@ public class CanvasGame extends MGCanvas implements Runnable{
 				LruMGImageCache
 						.getInstance()
 						.get(key)
-						.copyFrom(MGImage.createImageFromAssets(
-								getApp(),
+						.copyFrom(MGImage.createImageFromAssets(getApp(),
 								info.getAssetPath(), info.getScale(),
 								info.isLinear()));
 				Log.e("Load_Image : ", info.getAssetPath());
@@ -93,59 +94,45 @@ public class CanvasGame extends MGCanvas implements Runnable{
 		}
 
 	}
-	
-	 
 
-	    @Override
-	    public void run()
-	    {
-	        long beginTime;
-	        long timeDiff;
-	        int sleepTime = 0;
-	        int framesSkipped;
-	        while (!isStop)
-	        {
-	           
-	            
-	                framesSkipped = 0;
-	                beginTime = System.currentTimeMillis();
-	                dt = (beginTime - lastUpdate) * 0.001f;
-	                dt = Math.max(0, dt);
-	                lastUpdate = beginTime;
-	                try
-	                {
-	                    MGDirector.shareDirector().update(dt);
-	                }
-	                catch (Throwable e)
-	                {
-	                    
-	                }
+	@Override
+	public void run() {
+		long beginTime;
+		long timeDiff;
+		int sleepTime = 0;
+		int framesSkipped;
+		while (!isStop) {
 
-	               repaint();
-	                timeDiff = System.currentTimeMillis() - beginTime;
-	                sleepTime = (int) (FRAME_PERIOD - timeDiff);
-	                if (sleepTime > 0)
-	                {
-	                    SystemClock.sleep(sleepTime);
-	                }
-	                while (sleepTime < 0 && framesSkipped < MAX_FRAME_SKIPS)
-	                {
-	                    try
-	                    {
-	                        MGDirector.shareDirector().update(dt);
-	                    }
-	                    catch (Throwable e)
-	                    {
-	                        // TODO: handle exception
-	                    }
+			framesSkipped = 0;
+			beginTime = System.currentTimeMillis();
+			dt = (beginTime - lastUpdate) * 0.001f;
+			dt = Math.max(0, dt);
+			lastUpdate = beginTime;
+			try {
+				MGDirector.shareDirector().update(dt);
+			} catch (Throwable e) {
 
-	                    sleepTime += FRAME_PERIOD;
-	                    framesSkipped++;
-	                }
-	            }
+			}
 
-	        }
-	    
+			repaint();
+			timeDiff = System.currentTimeMillis() - beginTime;
+			sleepTime = (int) (FRAME_PERIOD - timeDiff);
+			if (sleepTime > 0) {
+				SystemClock.sleep(sleepTime);
+			}
+			while (sleepTime < 0 && framesSkipped < MAX_FRAME_SKIPS) {
+				try {
+					MGDirector.shareDirector().update(dt);
+				} catch (Throwable e) {
+					// TODO: handle exception
+				}
+
+				sleepTime += FRAME_PERIOD;
+				framesSkipped++;
+			}
+		}
+
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -163,10 +150,10 @@ public class CanvasGame extends MGCanvas implements Runnable{
 	 */
 	@Override
 	public void onResumeCanvas() {
-		 updateExe.execute(this);
-	        lastUpdate = System.currentTimeMillis();
-	        dt = 0;
-	        isStop = false;
+		updateExe.execute(this);
+		lastUpdate = System.currentTimeMillis();
+		dt = 0;
+		isStop = false;
 		MGDirector.shareDirector().onResume();
 
 	}
