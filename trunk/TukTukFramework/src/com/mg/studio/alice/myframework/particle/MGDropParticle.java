@@ -38,7 +38,7 @@ public class MGDropParticle {
 	private void initConfig() {
 		//thiet ke cac thong so particle
 		config = new ParticleConfig();
-		config.setRatio(RM.rate);
+		//config.setRatio(RM.rate);
 		config.setExplodeForceVarianceX(EXPLODE_FORCE_VARIANCE_X);
 		config.setExplodeMinForceY(EXPLODE_MIN_FORCE_Y);
 		config.setExplodeMaxForceY(EXPLODE_MAX_FORCE_Y);

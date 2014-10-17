@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.engine.MGCanvas;
 import com.mg.studio.engine.MGImage;
 
@@ -27,7 +28,7 @@ public class MyImage extends MGImage
         InputStream stream;
         try
         {
-            stream = OlaSolitaireActivity.activity.getAssets().open(path);
+            stream = CanvasGame.getApp().getAssets().open(path);
         }
         catch (IOException e)
         {
@@ -128,7 +129,7 @@ public class MyImage extends MGImage
         Bitmap bitmap;
         try
         {
-            InputStream stream = OlaSolitaireActivity.activity.getAssets().open(stringpath);
+            InputStream stream = CanvasGame.getApp().getAssets().open(stringpath);
             if (scale != 1)
             {
                 bitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeStream(stream),
