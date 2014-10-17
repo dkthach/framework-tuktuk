@@ -3,8 +3,6 @@ package com.mg.studio.alice.myframework.util;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.mg.studio.alice.OlaSolitaireActivity;
-
 /**
  * Class can register ContentProvider for loading resources from input stream,
  * Default is using assets provider. 

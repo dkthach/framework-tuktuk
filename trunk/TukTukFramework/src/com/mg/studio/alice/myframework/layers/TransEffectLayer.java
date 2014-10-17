@@ -3,7 +3,6 @@
  */
 package com.mg.studio.alice.myframework.layers;
 
-import com.mg.studio.alice.game.resoucredata.RM;
 import com.mg.studio.alice.myframework.director.MGNode;
 import com.mg.studio.alice.myframework.events.MGRGBAProtocol;
 import com.mg.studio.engine.MGColor;

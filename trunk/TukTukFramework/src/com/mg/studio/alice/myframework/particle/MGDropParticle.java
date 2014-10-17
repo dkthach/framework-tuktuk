@@ -5,7 +5,6 @@ package com.mg.studio.alice.myframework.particle;
 
 import android.opengl.GLES20;
 
-import com.mg.studio.alice.game.resoucredata.RM;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.engine.MGImage;
 import com.mg.studio.engine.MGParticleManager;

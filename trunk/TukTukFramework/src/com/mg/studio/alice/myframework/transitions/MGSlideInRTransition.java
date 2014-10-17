@@ -1,8 +1,8 @@
 package com.mg.studio.alice.myframework.transitions;
 
-import com.mg.studio.alice.CanvasGame;
 import com.mg.studio.alice.myframework.actions.interval.MGIntervalAction;
 import com.mg.studio.alice.myframework.actions.interval.MGMoveBy;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGScreen;
 import com.mg.studio.alice.myframework.type.MGPointF;
 import com.mg.studio.alice.myframework.type.MGSize;

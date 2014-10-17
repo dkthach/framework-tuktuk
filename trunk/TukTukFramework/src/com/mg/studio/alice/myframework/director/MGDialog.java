@@ -5,7 +5,6 @@ import java.util.List;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.CanvasGame;
 import com.mg.studio.alice.myframework.actions.ActionCallback;
 import com.mg.studio.alice.myframework.actions.ease.MGEaseBackIn;
 import com.mg.studio.alice.myframework.actions.ease.MGEaseExponentialOut;

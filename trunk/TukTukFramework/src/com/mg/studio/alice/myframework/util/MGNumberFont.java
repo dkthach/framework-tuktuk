@@ -2,7 +2,6 @@ package com.mg.studio.alice.myframework.util;
 
 import android.graphics.RectF;
 
-import com.mg.studio.alice.game.resoucredata.RM;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.engine.MGImage;
 

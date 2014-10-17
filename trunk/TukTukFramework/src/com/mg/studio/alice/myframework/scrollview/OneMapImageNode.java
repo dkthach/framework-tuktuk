@@ -3,7 +3,6 @@
  */
 package com.mg.studio.alice.myframework.scrollview;
 
-import com.mg.studio.alice.game.resoucredata.RM;
 import com.mg.studio.alice.myframework.director.MGNode;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.engine.MGImage;

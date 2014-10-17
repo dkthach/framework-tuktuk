@@ -2,7 +2,6 @@ package com.mg.studio.alice.myframework.director;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.CanvasGame;
 import com.mg.studio.alice.myframework.events.MGEventDelegateProtocol;
 
 public class MGScreen extends MGNode implements MGEventDelegateProtocol {

@@ -15,7 +15,6 @@ import com.mg.studio.alice.myframework.actions.UpdateCallback;
 import com.mg.studio.alice.myframework.actions.bas.MGAction;
 import com.mg.studio.alice.myframework.type.MGPointF;
 import com.mg.studio.alice.myframework.type.MGSize;
-import com.mg.studio.engine.MGColor;
 import com.mg.studio.engine.MGGraphic;
 
 /**

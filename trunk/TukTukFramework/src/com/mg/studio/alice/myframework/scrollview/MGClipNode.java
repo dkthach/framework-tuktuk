@@ -1,7 +1,6 @@
 package com.mg.studio.alice.myframework.scrollview;
 
 import com.mg.studio.alice.myframework.director.MGNode;
-import com.mg.studio.alice.myframework.layers.MGLayer;
 import com.mg.studio.alice.myframework.type.MGRect;
 import com.mg.studio.engine.MGGraphic;
 

@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 import android.graphics.PointF;
 
-import com.mg.studio.alice.CanvasGame;
-import com.mg.studio.alice.game.resoucredata.RM;
+import com.mg.studio.alice.myframework.director.CanvasGame;
 import com.mg.studio.alice.myframework.director.MGScreen;
 import com.mg.studio.alice.myframework.type.MGPointF;
 import com.mg.studio.alice.myframework.type.MGRect;
