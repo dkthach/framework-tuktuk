@@ -10,8 +10,10 @@ import com.mg.studio.alice.myframework.resourcemanager.MyImageInfo;
 import com.mg.studio.alice.myframework.resourcemanager.ResourceLoader;
 import com.mg.studio.alice.myframework.type.MGSize;
 import com.mg.studio.engine.MGCanvas;
+import com.mg.studio.engine.MGGameActivity;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.engine.MGImage;
+import com.mg.studio.engine.MGStandardGameActivity;
 
 /**
  * 
@@ -26,9 +28,11 @@ public class CanvasGame extends MGCanvas {
 
 	public static float widthDevices, heightDevices;
 	private MyImage temp;
+	private static Activity activity;
 
 	public CanvasGame(Activity context) {
 		super(context, true);
+		activity = context;
 		setRenderMode(RENDERMODE_WHEN_DIRTY);
 
 	}
@@ -42,9 +46,11 @@ public class CanvasGame extends MGCanvas {
 		widthDevices = getWidth();
 		heightDevices = getHeight();
 		sizeDevices.set(getScreenWidth(), getScreenHeight());
-		
-		
 
+	}
+
+	public static Activity getApp() {
+		return activity;
 	}
 
 	@Override
@@ -65,7 +71,7 @@ public class CanvasGame extends MGCanvas {
 						.getInstance()
 						.get(key)
 						.copyFrom(MGImage.createImageFromAssets(
-								OlaSolitaireActivity.activity,
+								getApp(),
 								info.getAssetPath(), info.getScale(),
 								info.isLinear()));
 				Log.e("Load_Image : ", info.getAssetPath());

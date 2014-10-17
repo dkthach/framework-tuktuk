@@ -3,6 +3,8 @@ package com.mg.studio.alice.myframework.util;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.mg.studio.alice.myframework.director.CanvasGame;
+
 /**
  * Class can register ContentProvider for loading resources from input stream,
  * Default is using assets provider. 
@@ -38,7 +40,7 @@ public class ContentHelper {
 			
 			@Override
 			public InputStream openStream(String path) throws IOException {
-				return OlaSolitaireActivity.activity.getAssets().open(path);
+				return CanvasGame.getApp().getAssets().open(path);
 			}
 		};
 	}
