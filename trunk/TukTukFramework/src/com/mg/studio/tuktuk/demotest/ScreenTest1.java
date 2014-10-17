@@ -37,7 +37,7 @@ public class ScreenTest1 extends MGScreen {
 
 	@Override
 	public void drawRearChild(MGGraphic g) {
-		g.setColor(1f, 1f, 0, 0);
+		g.setColor(1f, 1f, 1, 1);
 		g.drawRect(20 * RM.rate, 20 * RM.rate, CanvasGame.widthDevices - 20
 				* RM.rate, CanvasGame.heightDevices - 20 * RM.rate,true);
 	}
@@ -84,5 +84,10 @@ public class ScreenTest1 extends MGScreen {
 							ScreenTest2.screen()));
 		}
 		return true;
+	}
+	@Override
+	public boolean onBackPressed() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

@@ -12,100 +12,70 @@ import com.mg.studio.tuktuk.director.MGDirector;
  * @author Dk Thach
  * 
  */
-public class MainActivity extends MGStandardGameActivity 
-{
+public class MainActivity extends MGStandardGameActivity {
 
-   
-    private CanvasGame                 canvasGame;
- 
-   
+	private CanvasGame canvasGame;
 
-    @Override
-    public MGCanvas getCanvas()
-    {
-        if (canvasGame == null)
-        {
-            canvasGame = new CanvasGame(this);
-        }
-        return canvasGame;
-    }
+	@Override
+	public MGCanvas getCanvas() {
+		if (canvasGame == null) {
+			canvasGame = new CanvasGame(this);
+		}
+		return canvasGame;
+	}
 
-    @Override
-    public void gameCreate(Bundle savedInstanceState)
-    {
-        canvasGame = new CanvasGame(this);
-      
-    }
+	@Override
+	public void gameCreate(Bundle savedInstanceState) {
+		canvasGame = new CanvasGame(this);
 
-   
+	}
 
-    @Override
-    public void gamePause()
-    {
-      
+	@Override
+	public void gamePause() {
 
-    }
+	}
 
-    @Override
-    public void gameResume()
-    {
-      
+	@Override
+	public void gameResume() {
 
-    }
+	}
 
-    @Override
-    public void onBackPressed()
-    {
-        if (MGDialogManager.shareManager().onBackPressed())
-        {
-            return;
-        }
-        if (MGDirector.shareDirector().onBackPressed())
-        {
-            return;
-        }
+	@Override
+	public void onBackPressed() {
+		if (MGDialogManager.shareManager().onBackPressed()) {
+			return;
+		}
+		if (MGDirector.shareDirector().onBackPressed()) {
+			return;
+		}
+		super.onBackPressed();
+		// show dialog quit game ở đây
+	}
 
-       //show dialog quit game ở đây
-    }
+	@Override
+	protected boolean isBackTwiceToExit() {
+		return false;
+	}
 
-    @Override
-    protected boolean isBackTwiceToExit()
-    {
-        return false;
-    }
+	@Override
+	public void gameDestroy() {
 
-    @Override
-    public void gameDestroy()
-    {
-      
+	}
 
-    }
+	@Override
+	public void gameStop() {
 
-    @Override
-    public void gameStop()
-    {
-      
-    }
+	}
 
-    @Override
-    public void gameStart()
-    {
+	@Override
+	public void gameStart() {
 
-    }
+	}
 
-@Override
-public String getGameCode() {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-   
-
-  
-
-   
-
-  
-     
+	@Override
+	public String getGameCode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
