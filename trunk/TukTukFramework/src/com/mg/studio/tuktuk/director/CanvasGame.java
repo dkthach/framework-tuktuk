@@ -11,6 +11,7 @@ import android.util.Log;
 import com.mg.studio.engine.MGCanvas;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.engine.MGImage;
+import com.mg.studio.tuktuk.demotest.RM;
 import com.mg.studio.tuktuk.demotest.ScreenTest1;
 import com.mg.studio.tuktuk.resourcemanager.LruMGImageCache;
 import com.mg.studio.tuktuk.resourcemanager.MyImage;
@@ -48,7 +49,6 @@ public class CanvasGame extends MGCanvas implements Runnable {
 		super(context, true);
 		activity = context;
 		setRenderMode(RENDERMODE_WHEN_DIRTY);
-		MGDirector.shareDirector().runWithScreen(ScreenTest1.screen());
 
 	}
 
@@ -61,6 +61,8 @@ public class CanvasGame extends MGCanvas implements Runnable {
 		widthDevices = getWidth();
 		heightDevices = getHeight();
 		sizeDevices.set(getScreenWidth(), getScreenHeight());
+		RM.loadrs();
+		MGDirector.shareDirector().runWithScreen(ScreenTest1.screen());
 
 	}
 

@@ -34,7 +34,7 @@ public class MainActivity extends MGStandardGameActivity
     public void gameCreate(Bundle savedInstanceState)
     {
         canvasGame = new CanvasGame(this);
-        RM.loadrs();
+      
     }
 
    
