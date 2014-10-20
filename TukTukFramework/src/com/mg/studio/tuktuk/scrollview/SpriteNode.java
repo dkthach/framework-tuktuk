@@ -5,6 +5,7 @@ import com.mg.studio.engine.MGImage;
 import com.mg.studio.tuktuk.director.MGNode;
 
 public class SpriteNode extends MGNode {
+	
 	private final MGImage image;
 
 	public static SpriteNode create(MGImage image) {
@@ -18,7 +19,7 @@ public class SpriteNode extends MGNode {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		g.drawImage(image, 0, 0);
 	}
 

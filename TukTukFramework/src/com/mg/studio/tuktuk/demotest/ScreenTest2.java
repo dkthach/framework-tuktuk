@@ -37,7 +37,7 @@ public class ScreenTest2 extends MGScreen {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		g.setColor(1f, 0.5f, 0.5f, 0);
 		g.drawRect(20 * RM.rate, 20 * RM.rate, CanvasGame.widthDevices - 20
 				* RM.rate, CanvasGame.heightDevices - 20 * RM.rate, true);
@@ -77,7 +77,7 @@ public class ScreenTest2 extends MGScreen {
 		addball(points.x, points.y);
 		return true;
 	}
-
+	
 	@Override
 	public boolean onBackPressed() {
 		MGDirector.shareDirector().replaceScreen(

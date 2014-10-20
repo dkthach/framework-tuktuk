@@ -112,7 +112,7 @@ public class ProgressBar extends ABSProgressTimer {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		g.drawImage(bgBarImage, 0, 0);
 		g.beginMask(g, mgMaskObject, MGGraphic.MASK_STYLE_INSIDE);
 		g.drawImage(colorBarImage, 0, 0);

@@ -61,7 +61,6 @@ public class MGDialog extends MGNode implements IDialogAction,
 	}
 
 	// cac button mac dinh
-
 	public void setYesButton(MGButton yesButton, MGPointF position) {
 		this.yesButton = yesButton;
 		addMoreButton(yesButton, YES_BUTTON_ID, position);
@@ -91,7 +90,6 @@ public class MGDialog extends MGNode implements IDialogAction,
 	}
 
 	protected void setDefaulPosition(MGSize sizeDevices) {
-
 		setPosition(sizeDevices.width / 2 - contentSize_.width / 2,
 				sizeDevices.height / 2);
 	}

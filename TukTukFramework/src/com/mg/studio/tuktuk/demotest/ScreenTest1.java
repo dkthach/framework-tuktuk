@@ -5,11 +5,9 @@ package com.mg.studio.tuktuk.demotest;
 
 import android.graphics.PointF;
 
-import com.google.android.gms.internal.cn;
 import com.mg.studio.engine.MGGraphic;
 import com.mg.studio.tuktuk.actions.ActionCallback;
 import com.mg.studio.tuktuk.actions.ease.MGEaseBounceOut;
-import com.mg.studio.tuktuk.actions.instant.MGCallback;
 import com.mg.studio.tuktuk.actions.instant.MGCallbackN;
 import com.mg.studio.tuktuk.actions.interval.MGMoveTo;
 import com.mg.studio.tuktuk.actions.interval.MGScaleTo;
@@ -17,7 +15,6 @@ import com.mg.studio.tuktuk.actions.interval.MGSequence;
 import com.mg.studio.tuktuk.actions.interval.MGSpawn;
 import com.mg.studio.tuktuk.director.CanvasGame;
 import com.mg.studio.tuktuk.director.MGDirector;
-import com.mg.studio.tuktuk.director.MGNode;
 import com.mg.studio.tuktuk.director.MGScreen;
 import com.mg.studio.tuktuk.transitions.MGRotoZoomTransition;
 import com.mg.studio.tuktuk.type.MGPointF;
@@ -36,7 +33,7 @@ public class ScreenTest1 extends MGScreen {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		g.setColor(1f, 1f, 1, 1);
 		g.drawRect(20 * RM.rate, 20 * RM.rate, CanvasGame.widthDevices - 20
 				* RM.rate, CanvasGame.heightDevices - 20 * RM.rate,true);

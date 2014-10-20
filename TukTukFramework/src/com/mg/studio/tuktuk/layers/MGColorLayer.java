@@ -46,13 +46,13 @@ public class MGColorLayer extends MGLayer implements MGRGBAProtocol {
 
 	/*** Đừng xóa Super khi xài MGColorLayer ***/
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		newBlend = false;
 		g.setColor(getColor());
 	
 		if (opacity_ != 1) {
 			newBlend = true;
-			 GLES20.glEnable(GLES20.GL_BLEND);
+			GLES20.glEnable(GLES20.GL_BLEND);
 			GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA,
 					GLES20.GL_ONE_MINUS_SRC_ALPHA);
 		}
@@ -60,8 +60,6 @@ public class MGColorLayer extends MGLayer implements MGRGBAProtocol {
 		if (newBlend) {
 			g.enableBlendFunc();
 		}
-	
-
 	}
 
 	@Override

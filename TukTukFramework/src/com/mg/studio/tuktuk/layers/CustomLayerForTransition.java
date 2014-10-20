@@ -78,10 +78,10 @@ public class CustomLayerForTransition extends MGLayer implements MGRGBAProtocol{
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		g.drawRect(position_.x, position_.y,200,
 				200, true);
-		onePiece01.drawRearChild(g);
+		onePiece01.drawContent(g);
 		
 		
 	}
@@ -102,7 +102,7 @@ public class CustomLayerForTransition extends MGLayer implements MGRGBAProtocol{
 		}
 
 		@Override
-		public void drawRearChild(MGGraphic g) {
+		public void drawContent(MGGraphic g) {
 			// g.enableBlendFunc();
 			g.setColor(1f, 1, 0, 0);
 			g.drawRect(position_.x, position_.y, contentSize_.width,

@@ -63,7 +63,6 @@ public class MGScrollView extends MGLayer {
 		setIsTouchEnabled(true);
 		setClipToBounds(true);
 		addChild(container_);
-
 	}
 
 	/***
@@ -113,7 +112,6 @@ public class MGScrollView extends MGLayer {
 		if (!e) {
 			isDragging_ = false;
 			touchMoved_ = false;
-
 		}
 	}
 
@@ -315,7 +313,6 @@ public class MGScrollView extends MGLayer {
 	public void performedAnimatedScroll(float dt) {
 		if (isDragging_) {
 			unschedule(performedAnimatedScrollCallback);
-			;
 			return;
 		}
 		if (delegate != null) {

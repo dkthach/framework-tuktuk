@@ -38,13 +38,13 @@ public class MGTransitionScreen extends MGScreen {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		if (inScreenOnTop) {
-			outScreen.paintSelfAndChild(g);
-			inScreen.paintSelfAndChild(g);
+			outScreen.paint(g);
+			inScreen.paint(g);
 		} else {
-			inScreen.paintSelfAndChild(g);
-			outScreen.paintSelfAndChild(g);
+			inScreen.paint(g);
+			outScreen.paint(g);
 		}
 	}
 

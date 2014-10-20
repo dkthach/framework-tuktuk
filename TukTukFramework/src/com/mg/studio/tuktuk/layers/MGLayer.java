@@ -25,8 +25,6 @@ public class MGLayer extends MGNode implements MGEventDelegateProtocol{
 		setAnchorPoint(0, 0);
 		setContentSize(CanvasGame.sizeDevices);
 	}
-	
-	
 
 	@Override
 	public boolean onTouchDown1(PointF points) {
