@@ -59,22 +59,18 @@ public class MainActivity extends MGStandardGameActivity {
 
 	@Override
 	public void gameDestroy() {
-
 	}
 
 	@Override
 	public void gameStop() {
-
 	}
 
 	@Override
 	public void gameStart() {
-
 	}
 
 	@Override
 	public String getGameCode() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -159,11 +159,10 @@ public class MGDialogManager {
 
 		}
 		if (transparentLayer != null) {
-			transparentLayer.paintSelfAndChild(g);
+			transparentLayer.paint(g);
 		}
 		if (availableDialog_ != null) {
-			availableDialog_.paintSelfAndChild(g);
-
+			availableDialog_.paint(g);
 		}
 
 	}

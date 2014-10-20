@@ -37,12 +37,10 @@ public class MGMoveInLTransition extends MGTransitionScreen implements
 		MGIntervalAction a = action();
 
 		inScreen.runAction(MGSequence.actions(easeAction(a),
-
 				MGCallback.action( new ActionCallback() {
-					
 					@Override
 					public void execute(Object object) {
-finish();						
+						finish();						
 					}
 				})));
 	}

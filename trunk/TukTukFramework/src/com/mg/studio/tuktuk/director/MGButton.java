@@ -61,7 +61,7 @@ public class MGButton extends MGNode {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		if (image != null) {
 			g.drawImage(image, 0, 0);
 		}

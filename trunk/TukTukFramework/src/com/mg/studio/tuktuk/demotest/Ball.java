@@ -17,7 +17,7 @@ public class Ball extends MGNode {
 	}
 
 	@Override
-	public void drawRearChild(MGGraphic g) {
+	public void drawContent(MGGraphic g) {
 		g.drawImage(image, 0, 0);
 	}
 

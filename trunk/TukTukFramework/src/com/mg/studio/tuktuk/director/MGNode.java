@@ -23,6 +23,7 @@ import com.mg.studio.tuktuk.type.MGSize;
  */
 
 public class MGNode {
+	
 	protected PointF anchorPoint_;
 	protected PointF anchorPointInPixels_;
 	protected MGPointF position_;
@@ -39,7 +40,7 @@ public class MGNode {
 	 **/
 	private boolean isRelativeAnchorPoint;
 	// z-order value
-	protected int zOrder_ = -1;
+	protected int zOrder_ = 1;
 	private boolean isRunning_;
 	private boolean hide_;
 	private boolean transFormEnable = true;
@@ -492,10 +493,8 @@ public class MGNode {
 	 * Thứ tự vẽ trong như sau<br>
 	 * drawRear()->>>Draw listnode--->>>DrawFront()
 	 **/
-	public void drawFrontChild(MGGraphic g) {
-		// g.setColor(255, 255, 0, 0);
-		// g.drawRect(position_.x, position_.y, contentSize_.width,
-		// contentSize_.height);
+	protected void drawForeground(MGGraphic g) {
+	
 	}
 
 	/***
@@ -506,8 +505,28 @@ public class MGNode {
 	 * 
 	 * drawRear()->>>Draw listNode children--->>>DrawFront()
 	 **/
-	public void drawRearChild(MGGraphic g) {
-
+	protected void drawContent(MGGraphic g) {
+		
+	}
+	
+	protected void drawBackground(MGGraphic g){
+		
+	}
+	
+	private void drawSubNodes(MGGraphic g){
+		// Vẽ có phụ thuôc tham số Zorder chỉ số nhỏ vẽ trước
+		if (children_ != null) {
+			for (int i = 0, n = children_.size(); i < n; ++i) {
+				try {
+					MGNode child = children_.get(i);
+					if( child != null ){
+						child.paintSelfAndChild(g);
+					}
+				} catch (Throwable e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	/***
@@ -516,7 +535,11 @@ public class MGNode {
 	 * 
 	 * Phương thức đệ quy vẽ node và các node con của nó
 	 */
-	public void paintSelfAndChild(MGGraphic g) {
+	public final void paint(MGGraphic g) {
+		paintSelfAndChild(g);
+	}
+	
+	void paintSelfAndChild(MGGraphic g) {
 		if (hide_) {
 			return;
 		}
@@ -526,38 +549,12 @@ public class MGNode {
 		if (transFormEnable) {
 			transForm(g);
 		}
-		drawRearChild(g);
-		// vẽ những node không phụ thuộc ZOrder node nào add trước vẽ trước
-		if (children_ != null) {
-			for (int i = 0, n = children_.size(); i < n; ++i) {
-				try {
-					MGNode child = children_.get(i);
-					if (child.zOrder_ < 0) {
-						child.paintSelfAndChild(g);
-					} else
-						break;
-				} catch (Throwable e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-		// Vẽ có phụ thuôc tham số Zorder chỉ số nhỏ vẽ trước
-
-		if (children_ != null) {
-			for (int i = 0, n = children_.size(); i < n; ++i) {
-				try {
-					MGNode child = children_.get(i);
-					if (child.zOrder_ >= 0) {
-						child.paintSelfAndChild(g);
-					}
-				} catch (Throwable e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-		drawFrontChild(g);
+		
+		drawBackground(g);
+		drawContent(g);
+		drawSubNodes(g);
+		drawForeground(g);
+		
 		g.popMatrix();
 
 	}
